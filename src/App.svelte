@@ -2,10 +2,15 @@
   let name = 'World';
   let age = 99;
   let toggle = false;
+  let fruits = ['Apple', 'Banana', 'Cherry', 'Orange', 'Mango'];
 
   function assign() {
     name = 'Jess2';
     age = 31;
+  }
+
+  function deleteFruit() {
+    fruits = fruits.slice(1);
   }
 </script>
 
@@ -27,6 +32,18 @@
 {:else}
   Closed!
 {/if}
+
+<hr />
+
+<ul>
+  {#each fruits as fruit}
+    <li>{fruit}</li>
+  {/each}
+</ul>
+<button on:click={deleteFruit}>
+  Eat it!
+</button>
+
 
 <style>
   h1 {
