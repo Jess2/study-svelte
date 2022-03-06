@@ -1,6 +1,7 @@
 <script>
   let name = 'World';
   let age = 99;
+  let toggle = false;
 
   function assign() {
     name = 'Jess2';
@@ -15,6 +16,17 @@
 <button on:click={assign}>
   클릭!
 </button>
+
+<hr />
+
+<button on:click={() => toggle = !toggle}>
+  토글
+</button>
+{#if toggle}
+  Opened!
+{:else}
+  Closed!
+{/if}
 
 <style>
   h1 {
